@@ -10,3 +10,7 @@ body {
     sans-serif;
   font-size: 16px;
 }
+
+.peer:not(:placeholder-shown) ~ label {
+  @apply top-2 text-xs text-gray-400;
+}
