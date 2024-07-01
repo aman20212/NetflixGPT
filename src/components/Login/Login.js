@@ -8,14 +8,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Header from "../Header/Header";
 import { checkValidData } from "../../utils/validate";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../../utils/userSlice";
 
 
 const Login = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const [isSignInForm, setIsSignForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -56,7 +54,7 @@ const Login = () => {
                         console.log('Name updated successfully');
                         const { uid, email, displayName } = auth?.currentUser;
                         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
-                        navigate("/browse");
+
                     }).catch((error) => {
                         console.log('Name updation failed::', error);
                     })
@@ -64,8 +62,8 @@ const Login = () => {
                 })
                 .catch((error) => {
                     console.log(`Error occured ${error}`);
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
+                    // const errorCode = error.code;
+                    // const errorMessage = error.message;
                     toast.error(error?.message, {
                         position: "top-center",
                         autoClose: 5000,
@@ -84,8 +82,7 @@ const Login = () => {
             signInWithEmailAndPassword(auth, email?.current?.value, password?.current?.value)
                 .then((userCredential) => {
                     // Signed in 
-                    const user = userCredential.user;
-                    console.log('SignedIn User is :', userCredential);
+                    // const user = userCredential.user;
                     toast.success('Login Successful!!', {
                         position: "top-center",
                         autoClose: 5000,
@@ -97,10 +94,10 @@ const Login = () => {
                         theme: "dark",
                         transition: Bounce,
                     });
-                    navigate("/browse");
+
                 })
                 .catch((error) => {
-                    const errorCode = error.code;
+                    // const errorCode = error.code;
                     toast.error(error?.message, {
                         position: "top-center",
                         autoClose: 5000,
@@ -112,7 +109,6 @@ const Login = () => {
                         theme: "dark",
                         transition: Bounce,
                     });
-                    // setErrorMessage(errorCode + " " + errorMessage);
                 });
         }
     }
@@ -124,10 +120,10 @@ const Login = () => {
                 <Header />
                 <ToastContainer />
                 <div className="h-screen">
-                    <img src="https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_small.jpg" srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w" alt="" className="h-screen w-screen" />
+                    <img src="https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_small.jpg" srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w" alt="banner-img" className="h-screen w-screen" />
                 </div>
                 <div className="absolute top-1/2 left-1/2 bg-black-semi-transparent rounded p-10 transform -translate-x-1/2 -translate-y-1/2 w-1/3 mt-4">
-                    <form className="flex flex-col gap-y-4 " onSubmit={(e) => {
+                    <form autoComplete="off" className="flex flex-col gap-y-4 " onSubmit={(e) => {
                         e.preventDefault();
                     }}>
                         <h1 className="font-bold text-3xl text-white mb-5">{isSignInForm ? 'Sign In' : 'Sign Up'}</h1>
@@ -138,8 +134,8 @@ const Login = () => {
 
                         {!isSignInForm &&
                             <div className="relative">
-                                <input type="text" id="name" ref={name} placeholder=" " className="w-full bg-customGray rounded-sm border border-gray-500 border-opacity-70 leading-2 p-4 peer text-white" required />
-                                <label htmlFor="name" className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-400">Enter Your Name</label>
+                                <input type="text" id="name" ref={name} placeholder=" " className="w-full bg-customGray rounded-sm border border-gray-500 border-opacity-70 leading-2 p-4 peer text-white" required autoComplete="false" autoSave="false" />
+                                <label htmlFor="name" className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-400" autoComplete="false">Enter Your Name</label>
                             </div>}
 
                         <div className="relative">

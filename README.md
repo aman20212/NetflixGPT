@@ -17,6 +17,19 @@
 - Updated Profile
 - Fetch Movies from TMDB for Browse Page
 
+- Bug Fix of Route Authentication /browse and /login(If the user is not logged in redirect to login page and vice versa)
+- If user is logged in redirect to /browse page.
+- Unsubscribed to the onAuthStateChanged Callback.
+- Register for TMDB API, Create New API. Get Access Token, Go to Documentation and get data from TMDB now playing list.
+- Get Data from TMDB API.
+- Created custom hook for Now playing movies
+- Updated Store with movies Data/ Create a movie Slice
+- Planning for Main and Secondary Container
+- Custom Hook for Trailer Video
+- Update Store with Trailer Video data
+- Embedded the youtube video and make it autoplay and mute
+  -Tailwind Classes to make MainContainer look awesome
+
 # Features
 
 - Browse Page (after authentication)
