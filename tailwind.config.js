@@ -8,9 +8,11 @@ module.exports = {
         customGray: 'rgba(22, 22, 22, 0.7)',
         redBtn: 'rgb(229, 9, 20)',
         customGray2: 'rgba(128, 128, 128, 0.4)'
-      },
+      }
     },
   },
-  plugins: [],
+  plugins: [
+
+  ],
 }
 

@@ -1,5 +1,6 @@
 import Header from "../Header/Header";
 import useNowPlayingMovies from "../../hooks/useNowPlayingMovies";
+import usePopularMovies from "../../hooks/usePopularMovies"
 import MainContainer from "../MainContainer/MainContainer";
 import SecondaryContainer from "../SecondaryContainer/SecondaryContainer";
 
@@ -8,9 +9,10 @@ import SecondaryContainer from "../SecondaryContainer/SecondaryContainer";
 const Browse = () => {
 
     useNowPlayingMovies();
+    usePopularMovies();
 
     return (
-        <div>
+        <div className="">
             <Header className="" />
             <MainContainer />
             <SecondaryContainer />

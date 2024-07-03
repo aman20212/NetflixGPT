@@ -66,7 +66,7 @@ const Header = () => {
 
 
     return (
-        <header className="absolute bg-gradient-to-b from-black z-10 w-screen flex justify-between">
+        <header className="absolute bg-gradient-to-b from-black z-10 w-full flex justify-between">
             {/* <ToastContainer /> */}
             <div><img src={LOGO} alt="Netflix Logo"
                 className="w-44"
