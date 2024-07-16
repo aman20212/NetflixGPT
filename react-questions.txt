@@ -1,0 +1,151 @@
+difference between async and differ
+ways to create object in javascript
+es 6 features
+immediately invoked functions
+anonymous functions
+inbuilt anonymous functions
+hosting in javascript
+ 
+1)      Explain the current project and technology in depth.
+2)       Create your own customized react-hook
+3)       What are hooks in react and explain the different ways to use use-effect?
+4)       What can we used to stop the unnecessary re-rendering of react component? (Explain shouldComponentUpdate and React.Memo)
+5)       If we have a component root, which has child component A, which turn has child component B … so on till Z, then what are the different ways to pass Data from react component to another? (Explain, prop chaining and its disadvantage and then react context api and redux, uses and disadvantages).
+6)       If a code throws an error on the production environment in the component, but not on the dev or QA environment, then how we could catch the error? (Explain how to build logger in the prod environment).
+7)       How to catch error in the component? (Explain error boundary).
+8)       Write code to explain the functionality of shouldComponentUpdate, useEffect, useCallback, useMemo and React.Memo?
+9)      Create a functional To-do application as shown in the link below.-> https://5i7gu.csb.app/
+10)    What are microfrontends and explain the concept of microfrontends?
+11)    Design a custom JavaScript event on click of a button or input of data on the text box and then listen the same event from another module. Write code for the same.
+12)    What are the caching techniques to be used in the project?
+13)    Explain the security policy from saving application from hacking.
+14)    What are generators?
+15)    Difference between nested functions and closures in JavaScript.
+16)    What are IFFEs and what are the advantages of IFFEs?
+17)    Explain event looping, bubbling etc.
+18)    Should have good understanding of es6 operators.
+19)    What are promises? Write a code with fetch call using promises in react.
+20)    What is box-modelling?
+21)    What are sass,less and scss?
+22)    Coding question -> rotate an array, code in JavaScript only. (time complexity:- O(n) and space complexity :- O(1))
+23)    How to set up CI/CD pipeline?
+24)    Should have a knowledge of one cloud (good to have knowledge of google cloud).
+25)    Revise easy coding questions on array and strings.
+26) story board with regard to component management. Basically how component managemet is done in a large team.
+27) webpack - latest version used
+28) how to make api call with 3 retries
+29) 5 simultaneous API calls with retries
+30) How to handle huge request load on node server. Rate limiter to be used.
+31) Redis - How and where to be used.
+32) How to communicate between 2 different Redux store in a microfront end.
+
+
+
+CSS ---->
+1. display
+2. position
+3. units
+4. box model
+5. transition property
+
+React --->
+Virtual DOM
+Why React is fast ?
+useEffect, useState, useCallback, useMemo
+What is HOC ?
+Controlled vs Uncontrolled Component
+props drilling
+Setting up React Router? React Router ?
+Setting and Managing State in React ?
+React Testing Framework
+How to useContext ? Can we have multiple useContext/provider
+Difference between useCallback/useMemo/memo ?
+When to use them ? In which scenario ?
+
+--> what is the difference between:
+ 
+onClick = {handleActivate}
+onClick = {() => handleActivate(item)}
+onClick = {handleActivate(item)}how will rendering/re-rendering of component behave in all 3 cases ?
+
+--> useEffect(() => {
+ return (() => {console.log('Leaving Component')})
+}, [])https://reacttraining.com/blog/useEffect-cleanup
+
+
+
+What are SOLID principles ?
+What are Design Patterns ? using JS || React
+
+
+
+--------------------------------------------
+--------------------------------------------
+
+Design a traffic system
+Red->Yellow->Green->Yellow->Red(This continues)
+Red light to show for 3000ms
+Yellow light to show for 1000ms
+Green light to show for 4000ms
+
+==========================
+[11:42] Arun Dsa
+What is SSR(Server side rendering)? 
+What is SSG(Static Site Generation)?
+what is ISG(incremental static regeneration)?
+How to implement accessibility?
+How to optimise SEO?
+How to optimise page load time when the page has lot of images(like amazon/flipkart)
+how to optimise reactjs app performance?
+how to implement infinite scroll without using third-party library?
+ Grid and flex in css
+difference between mixin and function in scss
+what is Web Vitals
+security vulnerabilities
+difference between apply, call and bind
+rest operator, spread operator, deconstructing, 
+difference between arrow function and normal function
+ 
+what is the output of following 
+ 
+function xyz (...rest, param) {
+}
+ 
+ ++++++++++++++++
+ 
+console.log(parent())
+function parent() {
+ var a = 'World'
+ function a(){
+   return 'Hello'
+ }
+ return a()
+}
+ 
+
+
+JavaScript:-------------------->
+a. Conversion of string to numbers (default conversion)
+b. Short circuit AND OR operator ?
+c. What is !! ?
+d. Difference between prefix and postfix ?
+e. What is event delegation ? stopPropogation vs stopImmediatePropogation ?
+f. Code Build strategies using bundlers such as webpack or babel ? Strategies to minify your css and js files ?
+g. Difference between arrow and normal function ?
+h. How infinite scroll works ? How to avoid re-render of component when state gets updated in case of infinite scroll ?
+
+-> What is SSR? Benefits of SSR ?
+->Difference between SaaS mixins and functions ?
+-> How to declare global and local variable in SaaS ?
+-> How to use different images based on different viewport size without using media queries ?
+-> How to optimize performance of a React app ?
+-> How to improve application load time ?
+-> What is minify, uglify, tree shaking, code splitting ?
+- > What is the use of webpack and rollup ?
+
+- > Can an iframe inside inside a web page access properties of DOM defined outside ?
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_parent2
+
+-> What is the difference between first party and third party cookies ?
+
+- > Why do modern browsers block cookies ?
