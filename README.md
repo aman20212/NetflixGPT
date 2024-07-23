@@ -34,6 +34,11 @@
 - Build MovieCard Component
 - Added TMDB Image CDN URL
 - Included more custom hook for Popular Movies
+- GPT Search Feature
+- GPT Search Page
+- GPT Search Bar
+- **Multi-language Feature in App**
+- Integrate GPT APIs, get openAI key
 
 # Features
 

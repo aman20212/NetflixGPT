@@ -10,6 +10,7 @@ import Header from "../Header/Header";
 import { checkValidData } from "../../utils/validate";
 import { useDispatch } from "react-redux";
 import { addUser } from "../../utils/userSlice";
+import { NETFLIX_BG_IMAGE_URL } from "../../utils/constants"
 
 
 const Login = () => {
@@ -120,7 +121,7 @@ const Login = () => {
                 <Header />
                 <ToastContainer />
                 <div className="h-screen">
-                    <img src="https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_small.jpg" srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/a56dc29b-a0ec-4f6f-85fb-50df0680f80f/2f8ae902-8efe-49bb-9a91-51b6fcc8bf46/IN-en-20240617-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w" alt="banner-img" className="h-screen w-full" />
+                    <img src={NETFLIX_BG_IMAGE_URL} alt="banner-img" className="h-screen w-full" />
                 </div>
                 <div className="absolute top-1/2 left-1/2 bg-black-semi-transparent rounded p-10 transform -translate-x-1/2 -translate-y-1/2 w-1/3 mt-4">
                     <form autoComplete="off" className="flex flex-col gap-y-4 " onSubmit={(e) => {

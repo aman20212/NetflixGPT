@@ -8,13 +8,18 @@ import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { addUser, removeUser } from "../../utils/userSlice";
-import { LOGO, USER_AVATAR } from "../../utils/constants";
+import { LOGO, USER_AVATAR, SUPPORTED_LANGUAGES } from "../../utils/constants";
+import { toggleGPTSearchView } from "../../utils/gptSlice";
+import { changeLanguage } from "../../utils/configSlice";
+
+
 
 
 const Header = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const userInfo = useSelector((state) => state?.user);
+    const showGptSearch = useSelector((store) => store.gpt.showGPTSearch);
 
     const handleSignOut = () => {
         signOut(auth).then(() => {
@@ -64,6 +69,15 @@ const Header = () => {
 
     }, [])
 
+    const handleGPTSearchClick = () => {
+        // Toggle GPT Search Button
+        dispatch(toggleGPTSearchView());
+    }
+
+    const handleLanguageChange = (e) => {
+        dispatch(changeLanguage(e.target.value));
+    };
+
 
     return (
         <header className="absolute bg-gradient-to-b from-black z-10 w-full flex justify-between">
@@ -77,14 +91,34 @@ const Header = () => {
                 <div className="">Sign out of Netflix</div>
             </div> */}
 
-            {userInfo && <div className="flex flex-col p-4 mr-4 group">
-                <img src={USER_AVATAR} alt="user-icon" className="w-12 h-12 rounded cursor-pointer" />
-
-
-                <div className="absolute right-2 mt-14 w-auto bg-gray-800 rounded-sm shadow-lg py-2 hidden group-hover:block">
-                    <button onClick={handleSignOut} className="block px-4 py-2 text-sm text-gray-200 cursor-pointer hover:bg-gray-700">Sign out of Netflix</button>
+            {userInfo && (
+                <div className="flex flex-row p-4 mr-4">
+                    {showGptSearch && (
+                        <select
+                            className="p-2 m-2 bg-gray-900 text-white"
+                            onChange={handleLanguageChange}
+                        >
+                            {SUPPORTED_LANGUAGES.map((lang) => (
+                                <option key={lang.identifier} value={lang.identifier}>
+                                    {lang.name}
+                                </option>
+                            ))}
+                        </select>
+                    )}
+                    <button className="py-2 px-4 mx-4 my-2 bg-red-700 text-white rounded font-semibold" onClick={handleGPTSearchClick}>{showGptSearch ? "Homepage" : "GPT Search"}</button>
+                    <div className="relative group">
+                        <img src={USER_AVATAR} alt="user-icon" className="w-12 h-12 rounded cursor-pointer" />
+                        <div className="absolute right-0 top-full mt-2 w-48 bg-gray-800 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <button
+                                onClick={handleSignOut}
+                                className="w-full px-4 py-2 text-sm text-gray-200 cursor-pointer bg-transparent hover:bg-gray-700 rounded-md focus:outline-none"
+                            >
+                                Sign out
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>}
+            )}
         </header>
     )
 }
