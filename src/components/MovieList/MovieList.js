@@ -11,7 +11,6 @@ const MovieList = ({ title, movies }) => {
     };
 
     const scrollRight = () => {
-        console.log('Right::', scrollRef);
         if (scrollRef.current) {
             scrollRef.current.scrollBy({ left: 200, behavior: 'smooth' });
         }
