@@ -41,6 +41,9 @@
 - Integrate GPT APIs, get openAI key
 - Since, there were errors with GPT API, hence replaced the same with Gemini API Key and used the same.
 - Updated the GPT store accordingly.
+- New GPTMovieSuggestions UI
+- Added .env file
+- Added memoization to avoid unnecessary api calls via hooks
 
 # Features
 
